@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="../css/style.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Character Creator</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Character Creator</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Race</a></li>
+                    <li><a href="#">Class / Level</a></li>
+                    <li><a href="#">Abilities Scores / Feats</a></li>
+                    <li><a href="#">Background</a></li>
+                    <li><a href="#">Proficiencies</a></li>
+                    <li><a href="#">Equipment</a></li>
+                    <li><a href="#">Spells</a></li>
+                    <li><a href="#">Description</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Overview -->
+                <div class="col-sm-6" id="overview">
+                    <div class="container-fluid">
+                        <div class="jumbotron">
+                            <h2>Race Class [lvl] <small>Sub-race Sub-class</small></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" id="options">
+                    <div class="container-fluid" id="options-race">
+                        <div class="jumbotron">
+                            <!-- Accordion Menu for Race Selection --> 
+                            <!-- Will eventually be generated dynamically -->
+                            <div class="panel-group" id="accordion-master">
+                                <div class="panel panel-default">
+                                    <!-- Race Section Header -->
+                                    <div class="panel-heading" data-toggle="collapse" data-target="#accordion-race">
+                                        <h4 class="panel-title">
+                                               <a data-toggle="collapse" href="#accordion-race">Race</a>
+                                        </h4>
+                                    </div>
+                                    <!-- Race Section's Content listed -->
+                                    <div id="accordion-race" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="panel-group" id="race-select">
+                                                <div class="panel panel-default">
+                                                    <!--  Race Selection Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#race">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#race">Race Selection</a>
+                                                        </h4>
+                                                    </div>
+                                                    <!-- Races listed -->
+                                                    <div id="race" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="panel-group" id="race-list">
+                                                                <div class="panel panel-default">
+                                                                    <!--  Dynamically generated subrace list code goes here -->
+                                                                    <div class="panel-heading" data-toggle="collapse" data-parent="#race" data-target="#race1">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" href="#race1">Race 1</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="race1" class="panel-collapse collapse">
+                                                                        <div class="panel-body">Race 1 Description</div>
+                                                                    </div>
+                                                                    <div class="panel-heading" data-toggle="collapse" data-parent="#race" data-target="#race2">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" href="#race2">Race 2</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="race2" class="panel-collapse collapse">
+                                                                        <div class="panel-body">Race 2 Description</div>
+                                                                    </div>
+                                                                    <div class="panel-heading" data-toggle="collapse" data-parent="#race" data-target="#race3">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" href="#race3">Race 3</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="race3" class="panel-collapse collapse">
+                                                                        <div class="panel-body">Race 3 Description</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#subrace">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#subrace">Subrace Selection</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="subrace" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="panel-group" id="subrace-list">
+                                                                <div class="panel panel-default">
+                                                                    <!--  Dynamically generated subrace list code goes here -->
+                                                                    <div class="panel-heading" data-toggle="collapse" data-parent="#subrace" data-target="#subrace1">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" href="#subrace1">Subrace 1</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="subrace1" class="panel-collapse collapse">
+                                                                        <div class="panel-body">Subrace 1 Description</div>
+                                                                    </div>
+                                                                    <div class="panel-heading" data-toggle="collapse" data-parent="#subrace" data-target="#subrace2">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" href="#subrace2">Subrace 2</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="subrace2" class="panel-collapse collapse">
+                                                                        <div class="panel-body">Subrace 2 Description</div>
+                                                                    </div>
+                                                                    <div class="panel-heading" data-toggle="collapse" data-parent="#subrace" data-target="#subrace3">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" href="#subrace3">Subrace 3</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="subrace3" class="panel-collapse collapse">
+                                                                        <div class="panel-body">Subrace 3 Description</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Class/Level Header -->
+                                    <div class="panel-heading" data-toggle="collapse" data-target="#accordion-classlvl">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#accordion-classlvl">Class / Level</a>
+                                        </h4>
+                                    </div>
+                                    <div id="accordion-classlvl" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="panel-group" id="classlvl-select">
+                                                <div class="panel panel-default">
+                                                    <!-- Class Selection Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#class">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#class">Class Selection</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="class" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="panel-group" id="class-list">
+                                                                <div class="panel panel-default">
+                                                                    <!-- Class List -->
+                                                                    <div class="panel-heading" data-toggle="collapse" data-target="#class1">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" href="#class1">Class 1</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="class1" class="panel-collapse collapse">
+                                                                        <div class="panel-body">Class 1 Description</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Ability Scores/Feats Header -->
+                                    <div class="panel-heading" data-toggle="collapse" data-target="#accordion-ability">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#accordion-ability">Ability Scores / Feats</a>
+                                        </h4>
+                                    </div>
+                                    <div id="accordion-ability" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="panel-group" id="ability-select">
+                                                <div class="panel panel-default">
+                                                    <!-- Ability Scores Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#ability">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#ability">Ability Scores</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="ability" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="panel-group" id="ability-list">
+                                                                <div class="panel panel-default">
+                                                                    <!-- Default Spread -->
+                                                                    <div class="panel-heading" data-toggle="collapse" data-target="#ability1">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" data-parent="#ability-list" href="#ability1">Default Spread</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="ability1" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <div class="col-sm-2">
+                                                                                <p>STR</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>DEX</p>
+                                                                            </div> 
+                                                                            <div class="col-sm-2">
+                                                                                <p>CON</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>INT</p>
+                                                                            </div> 
+                                                                            <div class="col-sm-2">
+                                                                                <p>WIS</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>CHA</p>
+                                                                            </div> 
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <!-- Point Buy -->
+                                                                    <div class="panel-heading" data-toggle="collapse" data-target="#ability2">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" data-parent="#ability-list" href="#ability2">Point Buy</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="ability2" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <div class="col-sm-2">
+                                                                                <p>STR</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>DEX</p>
+                                                                            </div> 
+                                                                            <div class="col-sm-2">
+                                                                                <p>CON</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>INT</p>
+                                                                            </div> 
+                                                                            <div class="col-sm-2">
+                                                                                <p>WIS</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>CHA</p>
+                                                                            </div> 
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <!-- Dice Roll -->
+                                                                    <div class="panel-heading" data-toggle="collapse" data-target="#ability3">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" data-parent="#ability-list" href="#ability3">Dice Role</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="ability3" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <div class="col-sm-2">
+                                                                                <p>STR</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>DEX</p>
+                                                                            </div> 
+                                                                            <div class="col-sm-2">
+                                                                                <p>CON</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>INT</p>
+                                                                            </div> 
+                                                                            <div class="col-sm-2">
+                                                                                <p>WIS</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>CHA</p>
+                                                                            </div> 
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <!-- Custom Scores -->
+                                                                    <div class="panel-heading" data-toggle="collapse" data-target="#ability4">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" data-parent="#ability-list" href="#ability4">Custom Scores</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="ability4" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <div class="col-sm-2">
+                                                                                <p>STR</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>DEX</p>
+                                                                            </div> 
+                                                                            <div class="col-sm-2">
+                                                                                <p>CON</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>INT</p>
+                                                                            </div> 
+                                                                            <div class="col-sm-2">
+                                                                                <p>WIS</p>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <p>CHA</p>
+                                                                            </div> 
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <!-- Feats Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#feats">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#feats">Feats</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="feats" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="panel-group" id="feats-list">
+                                                                <div class="panel panel-default">
+                                                                    <!-- Feats List -->
+                                                                    <div class="panel-heading" data-toggle="collapse" data-target="#feats1">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" href="#feats1">Feat 1</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="feats1" class="panel-collapse collapse">
+                                                                        <div class="panel-body">Feats 1 Description</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Background Header -->
+                                    <div class="panel-heading" data-toggle="collapse" data-target="#accordion-bg">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#accordion-bg">Background</a>
+                                        </h4>
+                                    </div>
+                                    <div id="accordion-bg" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="panel-group" id="background-select">
+                                                <div class="panel panel-default">
+                                                    <!-- Ability Scores Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#alignment">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#alingment">Alignment</a>
+                                                        </h4>
+                                                    </div> 
+                                                    <!-- Ability Scores Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#background">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#background">Background</a>
+                                                        </h4>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Proficiencies Header -->
+                                    <div class="panel-heading" data-toggle="collapse" data-target="#accordion-prof">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#accordion-prof">Proficiencies</a>
+                                        </h4>
+                                    </div>
+                                    <div id="accordion-prof" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="panel-group" id="skill-select">
+                                                <div class="panel panel-default">
+                                                    <!-- Skills Proficiency Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#skills">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#skills">Skills Proficiencies</a>
+                                                        </h4>
+                                                    </div> 
+                                                    <!-- Tools Proficiency Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#tools">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#tools">Tools Proficiencies</a>
+                                                        </h4>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Equipment Header -->
+                                    <div class="panel-heading" data-toggle="collapse" data-target="#accordion-equip">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#accordion-equip">Equipment</a>
+                                        </h4>
+                                    </div>
+                                    <div id="accordion-equip" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="panel-group" id="weapon-select">
+                                                <div class="panel panel-default">
+                                                    <!-- Weapons Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#weapons">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#weapons">Weapons</a>
+                                                        </h4>
+                                                    </div> 
+                                                    <!-- Armour Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#armour">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#armour">Armour</a>
+                                                        </h4>
+                                                    </div> 
+                                                    <!-- Equipment Pack Header -->
+                                                    <div class="panel-heading" data-toggle="collapse" data-target="#pack">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#pack">Equipment Pack</a>
+                                                        </h4>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Spells Header -->
+                                    <div class="panel-heading" data-toggle="collapse" data-target="#accordion-spells">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#accordion-spells">Spells</a>
+                                        </h4>
+                                    </div>
+                                    
+                                    <!-- Description Header -->
+                                    <div class="panel-heading" data-toggle="collapse" data-target="#accordion-desc">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#accordion-desc">Description</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="container-fluid text-center">
+            <p>4lphalfa 2017</p>
+        </footer>
+        
+        <script src="../js/character-creator.js"></script>
+    </body>
+</html>

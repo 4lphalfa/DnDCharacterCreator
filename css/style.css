@@ -1,0 +1,20 @@
+.carousel {
+    interval: false;
+}
+
+.race-slide > p {
+    text-align: center;
+}
+
+.subrace-slide > p {
+    text-align: center;
+}
+
+.search-button {
+    padding: 6px 24px;
+}
+
+footer {
+    background-color: #fff;
+    padding: 15px;
+}
